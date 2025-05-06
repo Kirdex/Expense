@@ -22,6 +22,7 @@
   <body>
     <nav class="navbar navbar-dark bg-primary">
       <div class="container" >
+        <a class ="navbar-brand" href = "list.html"> Main Page</a>
         <a class="navbar-brand" href="index.html">Daily Horoscope</a>
         <a class="navbar-brand" href = "weekly.html"> Weekly Horoscope</a>
         <a class ="navbar-brand" href = "comp.html"> Compatibility</a>
@@ -98,7 +99,7 @@
           contentDiv.innerHTML = `
           <div style = "background-color:black" >
             <h5><strong>Zodiac:</strong> ${data.zodiac || "No data available"}</h5>
-            <p><strong>Date:</strong> ${data.date || "No data available"}</p>
+            <p><strong>Date:</strong> ${data.week || "No data available"}</p>
             <p><strong>Theme:</strong> ${data.theme || "No data available"}</p>
             <p><strong>Horoscope:</strong> ${data.text || "No data available"}</p>
             <p><strong>Love:</strong> ${data.love || "No data available"}</p>

@@ -22,6 +22,7 @@
   <body>
     <nav class="navbar navbar-dark bg-primary">
       <div class="container" >
+        <a class ="navbar-brand" href = "list.html"> Main Page</a>
         <a class="navbar-brand" href="index.html">Daily Horoscope</a>
         <a class="navbar-brand" href = "weekly.html"> Weekly Horoscope</a>
         <a class ="navbar-brand" href = "comp.html"> Compatibility</a>
@@ -97,19 +98,19 @@
          
           contentDiv.innerHTML = `
           <div style = "background-color:black" >
-            <h5><strong>Zodiac:</strong> ${data.zodiac || "No data available"}</h5>
-            <p><strong>Date:</strong> ${data.date || "No data available"}</p>
-            <p><strong>Theme:</strong> ${data.theme || "No data available"}</p>
-            <p><strong>Horoscope:</strong> ${data.text || "No data available"}</p>
-            <p><strong>Love:</strong> ${data.love || "No data available"}</p>
-            <p><strong>Career:</strong> ${data.career || "No data available"}</p>
-            <p><strong>Health:</strong> ${data.health || "No data available"}</p>
-            <p><strong>Tips:</strong> ${data.tips || "No data available"}</p>
-            <p><strong>Mood:</strong> ${data.mood || "No data available"}</p>
-            <p><strong>Lucky Color:</strong> ${data.lucky_color?.name || "No data available"} 
-              <span style="background-color: ${data.lucky_color?.hex || "#ffffff"}; padding: 5px; border-radius: 3px;">${data.lucky_color?.emoji || ""}</span>
+            <h5><strong>Zodiac:</strong> ${data.zodiac}</h5>
+            <p><strong>Date:</strong> ${data.date}</p>
+            <p><strong>Theme:</strong> ${data.theme}</p>
+            <p><strong>Horoscope:</strong> ${data.text}</p>
+            <p><strong>Love:</strong> ${data.love}</p>
+            <p><strong>Career:</strong> ${data.career}</p>
+            <p><strong>Health:</strong> ${data.health}</p>
+            <p><strong>Tips:</strong> ${data.tips}</p>
+            <p><strong>Mood:</strong> ${data.mood}</p>
+            <p><strong>Lucky Color:</strong> ${data.lucky_color?.name} 
+              <span style="background-color: ${data.lucky_color?.hex}; padding: 5px; border-radius: 3px;"> ${data.lucky_color?.emoji || ""}</span>
             </p>
-            <p><strong>Lucky Item:</strong> ${data.lucky_item?.name || "No data available"} ${data.lucky_item?.emoji || ""}</p>
+            <p><strong>Lucky Item:</strong> ${data.lucky_item?.name} ${data.lucky_item?.emoji || ""}</p>
             </div>
           `;
         } catch (error) {
