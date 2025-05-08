@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -28,7 +29,9 @@
         <a class="navbar-brand" href="comp.html"> Compatibility</a>
       </div>
     </nav>
-
+    <button onclick="SortSign()" class="btn btn-secondary mt-3">
+      Sort A-Z
+    </button>
     <div class="container mt-5">
       <h4 class="text-center">
         Sign Information
@@ -37,6 +40,8 @@
     </div>
 
     <script>
+      let result = [];
+
       async function getHoroscopeList() {
         const url =
           "https://mysticverse-horoscope-zodiac-compatibility-api.p.rapidapi.com/horoscope?lang=en";
@@ -52,11 +57,18 @@
 
         try {
           const response = await fetch(url, options);
-          const result = await response.json();
-          const contentDiv = document.getElementById("horoscopeList");
-          console.log(result);
+          result = await response.json();
+          displayHoroscope(result);
+        } catch (error) {
+          console.error(error);
+        }
+      }
 
-          contentDiv.innerHTML = result.map(
+      function displayHoroscope(data) {
+        const contentDiv = document.getElementById("horoscopeList");
+
+        contentDiv.innerHTML = data
+          .map(
             (item) => `
           <div class="card mb-3 bg-dark text-white">
             <div class="card-body">
@@ -68,11 +80,26 @@
             </div>
           </div>
         `
-          );
-        } catch (error) {
-          console.error(error);
-        }
+          )
+          .join("");
       }
+
+      function SortSign() {
+        for (let i = 0; i < result.length - 1; i++) {
+          for (let j = 0; j < result.length - i - 1; j++) {
+            if (
+              result[j].name.toLowerCase() > result[j + 1].name.toLowerCase()
+            ) {
+              let temp = result[j];
+              result[j] = result[j + 1];
+              result[j + 1] = temp;
+            }
+          }
+        }
+        console.log(result);
+        displayHoroscope(result);
+      }
+
       window.onload = getHoroscopeList;
     </script>
   </body>
