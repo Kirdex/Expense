@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "project",
+			"path": "../../../../.."
+		},
+		{
+			"name": "backend",
+			"path": "../../../../../../Exp-Tracker/backend"
+		}
+	],
+	"settings": {}
+}
