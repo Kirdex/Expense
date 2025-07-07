@@ -7,10 +7,11 @@ import {
 } from "react-router-dom";
 import Login from "./pages/auth/Login";
 import SignUp from "./pages/auth/SignUp";
-import Income from "./pages/Dashboard/income";
+import Income from "./pages/Dashboard/Income";
 import Home from "./pages/Dashboard/Home";
 import Expense from "./pages/Dashboard/Expense";
 import UserProvider from "./context/userContext";
+import { Toaster } from "react-hot-toast";
 const App = () => {
   return (
     <UserProvider>
@@ -26,6 +27,14 @@ const App = () => {
           </Routes>
         </Router>
       </div>
+      <Toaster
+        toastOptions={{
+          className: "",
+          style: {
+            fontSize: "13px",
+          },
+        }}
+      />
     </UserProvider>
   );
 };
